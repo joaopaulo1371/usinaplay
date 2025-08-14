@@ -1,20 +1,72 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-header [name]="user.name" [level]="user.level" [avatar]="user.avatar">
+</app-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="app-bg">
+  <section class="section">
+    <div>
+      <h2 class="section-title">
+        PERSONAL ONLINE
+        <button class="menu-btn" type="button">
+          <img src="assets/icon/plus.svg" class="plus-icon" />
+        </button>
+      </h2>
+    </div>
+    <swiper-container
+      class="carousel"
+      slides-per-view="auto"
+      space-between="16"
+      centered-slides="true"
+    >
+      <swiper-slide *ngFor="let program of programs()">
+        <div
+          class="program-card"
+          [style.backgroundImage]="'url(' + program.image + ')'"
+        >
+          <span *ngIf="program.badge" class="badge">{{ program.badge }}</span>
+          <div class="card-footer">
+            <h3>{{ program.title }}</h3>
+          </div>
+        </div>
+      </swiper-slide>
+    </swiper-container>
+  </section>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <section class="section">
+    <h2 class="section-title">PROGRAMAS</h2>
+    <swiper-container
+      class="carousel"
+      slides-per-view="auto"
+      space-between="16"
+      centered-slides="true"
+    >
+      <swiper-slide *ngFor="let program of programs()">
+        <div
+          class="program-card"
+          [style.backgroundImage]="'url(' + program.image + ')'"
+        >
+          <span *ngIf="program.badge" class="badge">{{ program.badge }}</span>
+          <div class="card-footer">
+            <h3>{{ program.title }}</h3>
+          </div>
+        </div>
+      </swiper-slide>
+    </swiper-container>
+  </section>
+
+  <section class="section contents">
+    <h2 class="section-title subtle">CONTEÚDOS</h2>
+    <swiper-container
+      class="carousel"
+      slides-per-view="auto"
+      space-between="16"
+      centered-slides="true"
+    >
+      <swiper-slide>
+        <div class="placeholder-card"></div>
+      </swiper-slide>
+      <swiper-slide>
+        <div class="placeholder-card"></div>
+      </swiper-slide>
+    </swiper-container>
+  </section>
 </ion-content>

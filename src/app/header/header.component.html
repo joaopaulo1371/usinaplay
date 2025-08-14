@@ -1,0 +1,37 @@
+<ion-header class="custom-header">
+  <ion-toolbar class="toolbar-dark">
+    <div class="toolbar-container">
+      <button class="menu-btn" type="button">
+        <img src="assets/icon/menu.svg" class="menu-icon"/>
+      </button>
+
+      <img src="assets/logo-usina-play.png" alt="Usina Play Logo" class="logo" />
+
+      <button class="notification-btn" type="button">
+        <img src="assets/icon/notification.svg" class="notification-icon" />
+        <span class="notification-dot"></span>
+      </button>
+    </div>
+  </ion-toolbar>
+
+  <div class="profile-container">
+    <img [src]="avatar" alt="Foto de {{ name }}" class="avatar" />
+    <div class="profile-info">
+      <h2 class="name">{{ name }}</h2>
+      <span class="level">{{ level }}</span>
+    </div>
+  </div>
+
+  <div class="profile-actions">
+    <div class="actions-container">
+      <button class="action-btn" type="button">
+        <img src="assets/icon/person.svg" class="action-icon"/>
+        MEU CORPO
+      </button>
+      <button class="action-btn" type="button">
+        <img src="assets/icon/trophy.svg" class="action-icon"/>
+        OBJETIVOS E CONQUISTAS
+      </button>
+    </div>
+  </div>
+</ion-header>

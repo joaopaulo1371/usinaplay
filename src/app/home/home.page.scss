@@ -1,27 +1,169 @@
-#container {
-  text-align: center;
+/* ====== LAYOUT GERAL (mobile-first) ====== */
+ion-content {
+  --background: #050505 !important;
+  --padding-left: clamp(16px, 2.5vw, 48px);
+  --padding-top: clamp(220px, 28vh, 340px); /* compensa o header absoluto em todas as telas */
+}
 
+.section {
+  /* centro e largura máx. no desktop */
+  max-width: 1200px;
+  margin-inline: auto;
+
+  margin-bottom: clamp(16px, 3vw, 40px);
+  padding: clamp(12px, 1.6vw, 24px);
+
+  .section-title {
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 9999;
+    font-size: clamp(1.4rem, 2vw + 0.6rem, 2.2rem);
+    padding-left: 30px;
+    gap: 6px;
+
+    button.menu-btn {
+    margin-left: 0;
+    padding-left: 0;
+    padding-right: 0;
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    height: auto;
+  }
+
+    .badge-new {
+      background-color: #ff7a00;
+      color: #000;
+      padding: 2px 6px;
+      border-radius: 8px;
+      font-size: 0.75rem;
+      font-weight: bold;
+    }
+  }
+
+  .add {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    color: #ff7a00;
+    cursor: pointer;
+  }
+}
+
+/* ====== SWIPER ====== */
+.carousel {
+  width: 100%;
+  overflow: visible; /* deixa ver o "pedaço" dos próximos cards */
+}
+
+/* Controlamos a largura de cada SLIDE por breakpoint.
+   Como usamos slides-per-view="auto", o Swiper usa a largura do slide. */
+swiper-slide {
+  display: flex;
+  justify-content: center;
+  width: 84%; /* mobile: 1 card + peek do próximo */
+}
+
+@media (min-width: 768px) {
+  swiper-slide { width: 46%; } /* ~2.1 cards visíveis */
+}
+@media (min-width: 1024px) {
+  swiper-slide { width: 32%; } /* ~3 cards visíveis */
+}
+@media (min-width: 1440px) {
+  swiper-slide { width: 28%; } /* ~3.3 cards visíveis */
+}
+
+/* ====== CARD ====== */
+.program-card {
+  position: relative;
+  width: 100%;
+  /* fallback de altura + aspect-ratio para navegadores modernos */
+  height: clamp(160px, 28vw, 260px);
+  @supports (aspect-ratio: 16 / 9) {
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+
+  border-radius: clamp(12px, 1vw, 18px);
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  box-shadow: 0 8px 24px rgba(0,0,0,.25);
+}
+
+.badge {
   position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  top: clamp(6px, .6vw, 12px);
+  left: clamp(6px, .6vw, 12px);
+  background-color: rgba(255, 165, 0, 0.9);
+  color: #fff;
+  font-size: clamp(10px, .7vw, 12px);
+  font-weight: 700;
+  padding: clamp(3px, .4vw, 6px) clamp(7px, .7vw, 10px);
+  border-radius: 6px;
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+.card-footer {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+  padding: clamp(10px, 1vw, 14px);
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
+.card-footer h3 {
+  color: white;
+  font-size: clamp(14px, 1.1vw, 18px);
+  font-weight: 800;
   margin: 0;
+  letter-spacing: .4px;
 }
 
-#container a {
-  text-decoration: none;
+/* ====== CONTEÚDOS (grid) ====== */
+.contents .subtle { color: #888; }
+
+.contents .grid {
+  display: flex;
+  flex-direction: row;
+  gap: clamp(12px, 2vw, 20px);
+  overflow-x: auto;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-bottom: 8px; // opcional, para afastar a barra de rolagem
+}
+
+.contents .placeholder-card {
+  background: #222;
+  border-radius: 8px;
+  min-width: 220px;
+  min-height: clamp(183px, 18vw, 220px);
+  @supports (aspect-ratio: 16 / 9) {
+    min-height: 183px;
+    aspect-ratio: 16 / 9;
+  }
+}
+
+.plus-icon {
+  width: clamp(16px, 1.2vw, 20px);
+  height: clamp(16px, 1.2vw, 20px);
+  filter: invert(54%) sepia(97%) saturate(7492%) hue-rotate(2deg) brightness(104%) contrast(104%);
+}
+
+.plus-btn {
+  border: none;
+  border-radius: 50%;
+  width: clamp(40px, 3vw, 44px);
+  height: clamp(40px, 3vw, 44px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 8px;
+  cursor: pointer;
+  border: #ff7a00;
 }
