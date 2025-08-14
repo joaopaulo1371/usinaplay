@@ -31,10 +31,10 @@ environments/
 environment.ts
 
 
-- **components/** → Componentes reutilizáveis (ex.: `HeaderComponent`, `ProgramCardComponent`)
-- **pages/** → Páginas principais do app (ex.: `HomePage`)
-- **services/** → Serviços de dados (ex.: integração com Firebase)
-- **environments/** → Configurações do ambiente (chaves do Firebase)
+- **components/** 
+- **pages/** 
+- **services/** 
+- **environments/** 
 
 ---
 
