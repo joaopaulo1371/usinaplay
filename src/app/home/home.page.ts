@@ -1,16 +1,14 @@
 import { Component, OnInit, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
-// import { SwiperModule } from 'swiper/angular';
 import { DataService, Program, User } from '../services/data.service';
-import { ProgramCardComponent } from '../program-card/program-card.component';
 import { HeaderComponent } from '../header/header.component';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, IonicModule, ProgramCardComponent, HeaderComponent],
+  imports: [CommonModule, IonicModule, HeaderComponent],
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss'],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

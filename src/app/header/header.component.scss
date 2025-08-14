@@ -150,12 +150,12 @@
     align-items: center;
     justify-content: center;
     gap: 6px;
-        padding: clamp(5px, 0.5vw, 8px) clamp(10px, 1vw, 14px); // padding menor
+        padding: clamp(5px, 0.5vw, 8px) clamp(10px, 1vw, 14px); 
 
     background: transparent;
     border: none;
     color: #ff7a00;
-    font-size: clamp(.75rem, 0.8vw, .9rem); // fonte menor
+    font-size: clamp(.75rem, 0.8vw, .9rem); 
     font-weight: 500;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -179,7 +179,6 @@
 
 /* ====== LAYOUT DESKTOP EXTRA ====== */
 @media (min-width: 1024px) {
-  /* afasta mais o conteúdo do topo no desktop caso o header esteja maior */
   ion-content { --padding-top: clamp(240px, 26vh, 360px); }
 
   .profile-actions {
